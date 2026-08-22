@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Upper Focus</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#12151A">
+<meta name="theme-color" content="#0A101C">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -25,10 +25,10 @@
 @font-face{font-family:"Geist Mono";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/geist-mono-latin-600-normal.woff2) format("woff2")}
 
 :root{
-  --bg:#0E1116;
-  --card-hi:#1A2028; --card-lo:#141920; --well:#0E1319;
-  --line:#28313C; --hair:rgba(255,255,255,.055); --hair2:rgba(255,255,255,.09);
-  --ink:#F2F5F8; --muted:#9AA6B2; --faint:#65707C;
+  --bg:#0A101C;
+  --card-hi:#151F32; --card-lo:#101828; --well:#0A1322;
+  --line:#28374E; --hair:rgba(165,195,255,.07); --hair2:rgba(165,195,255,.11);
+  --ink:#EFF3FA; --muted:#96A5BE; --faint:#5F7089;
   --m:#C77E33; --m-tint:#E9A55E; --k:#2F9FB8; --k-tint:#5FC6DC;
   --good:#4EB97E; --warn:#D9A03F; --danger:#D96B5A;
   --disp:"Space Grotesk","Avenir Next",sans-serif;
@@ -40,7 +40,7 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;
   padding-bottom:env(safe-area-inset-bottom)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(120% 55% at 50% -12%,#1B2430 0%,rgba(27,36,48,0) 62%)}
+  background:radial-gradient(120% 55% at 50% -12%,#16233C 0%,rgba(22,35,60,0) 62%)}
 *{box-sizing:border-box}
 .wrap{max-width:700px;margin:0 auto;padding:26px 18px 110px;position:relative;z-index:1}
 button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -110,7 +110,7 @@ h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--ha
   font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.14em;text-transform:uppercase;
   transition:transform .1s ease,filter .15s ease}
 .btn:active{transform:scale(.98)}
-.btn.primary{background:linear-gradient(180deg,#F5F7F9,#D9E0E7);color:#0E1116;box-shadow:0 6px 20px rgba(0,0,0,.4),0 1px 0 rgba(255,255,255,.6) inset}
+.btn.primary{background:linear-gradient(180deg,#F5F8FC,#D8E1ED);color:#0A101C;box-shadow:0 6px 20px rgba(0,0,0,.4),0 1px 0 rgba(255,255,255,.6) inset}
 .btn.primary:active{filter:brightness(.94)}
 .btn[disabled]{opacity:.45}
 .fietsq{background:linear-gradient(180deg,var(--card-hi),var(--card-lo));border:1px solid var(--hair2);border-radius:20px;
@@ -122,7 +122,7 @@ h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--ha
 .fietsopts button:active{border-color:var(--muted)}
 .sesbanner{display:flex;gap:10px;align-items:center;border:1px solid rgba(217,160,63,.5);background:rgba(217,160,63,.07);
   border-radius:16px;padding:12px 15px;margin:12px 0 6px;font-size:14px;color:var(--warn)}
-.sessticky{position:fixed;left:0;right:0;bottom:0;background:rgba(14,17,22,.72);
+.sessticky{position:fixed;left:0;right:0;bottom:0;background:rgba(10,16,28,.72);
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--hair);
   padding:14px 16px calc(14px + env(safe-area-inset-bottom));display:none;z-index:30}
 .sessticky .inner{max-width:700px;margin:0 auto;display:flex;gap:10px}
@@ -172,7 +172,7 @@ table.log tr:last-child td{border-bottom:none}
 .empty{color:var(--faint);font-size:14px;padding:6px 2px}
 
 /* toast */
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:linear-gradient(180deg,#F5F7F9,#DFE5EB);color:#0E1116;
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:linear-gradient(180deg,#F5F8FC,#DEE6F1);color:#0A101C;
   font-weight:600;font-size:14.5px;border-radius:999px;padding:12px 22px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.55)}
 
 /* loader */
@@ -187,7 +187,7 @@ table.log tr:last-child td{border-bottom:none}
 .loadcard .btn{padding:12px;font-size:15px}
 
 /* pin dialog */
-.pinlayer{position:fixed;inset:0;background:rgba(8,10,13,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+.pinlayer{position:fixed;inset:0;background:rgba(5,9,16,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   z-index:50;display:none;align-items:center;justify-content:center;padding:24px}
 .pinlayer.show{display:flex}
 .pincard{background:linear-gradient(180deg,var(--card-hi),var(--card-lo));border:1px solid var(--hair2);border-radius:22px;
@@ -199,6 +199,55 @@ table.log tr:last-child td{border-bottom:none}
   font-family:var(--mono);font-size:22px;letter-spacing:.3em;text-align:center;padding:13px}
 .pincard .row{display:flex;gap:10px;margin-top:14px}
 .pincard .btn{padding:13px;font-size:15px}
+
+/* info dot */
+.info{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;
+  border:1px solid var(--hair2);color:var(--faint);font-size:10.5px;font-family:var(--disp);font-weight:500;
+  margin-left:8px;transform:translateY(-2px);flex:none}
+.card-top{cursor:pointer}
+/* detail sheet */
+.sheetlayer{position:fixed;inset:0;z-index:55;display:none;background:rgba(5,9,17,.72);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.sheetlayer.show{display:block}
+.sheet{position:absolute;left:0;right:0;bottom:0;max-width:700px;margin:0 auto;
+  background:linear-gradient(180deg,var(--card-hi),var(--card-lo));border:1px solid var(--hair2);border-bottom:none;
+  border-radius:26px 26px 0 0;padding:16px 20px calc(26px + env(safe-area-inset-bottom));
+  max-height:86vh;overflow-y:auto;box-shadow:0 -24px 70px rgba(0,0,0,.55)}
+.sh-grip{width:44px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 14px}
+.sh-top{display:flex;align-items:center;gap:10px}
+.sh-title{font-family:var(--disp);font-weight:700;font-size:22px;letter-spacing:-.01em}
+.sh-sub{color:var(--faint);font-size:13px}
+.sh-close{margin-left:auto;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.05);
+  border:1px solid var(--hair2);color:var(--muted);font-size:15px;flex:none;display:flex;align-items:center;justify-content:center}
+.sh-muscles{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 14px}
+.sh-muscles span{font-size:12px;color:var(--muted);border:1px solid var(--hair2);background:rgba(255,255,255,.03);
+  border-radius:999px;padding:4px 11px}
+.sh-anim{background:var(--well);border:1px solid var(--hair);border-radius:18px;padding:6px;margin-bottom:18px;
+  box-shadow:0 2px 8px rgba(0,0,0,.3) inset}
+.sh-anim svg{display:block;width:100%;height:172px}
+.fg{stroke:var(--ink);fill:none;stroke-width:4.6;stroke-linecap:round;stroke-linejoin:round}
+.eq{stroke:var(--m-tint);fill:none;stroke-width:4;stroke-linecap:round}
+.eqf{fill:var(--m-tint);stroke:none}
+.cb{stroke:#5A7396;fill:none;stroke-width:2.4;stroke-linecap:round}
+.st{stroke:#3A4A64;fill:none;stroke-width:4;stroke-linecap:round}
+.gnd{stroke:rgba(165,195,255,.14);stroke-width:2;stroke-linecap:round}
+@media (prefers-reduced-motion:no-preference){
+  .pa{animation:posea 3.8s ease-in-out infinite}
+  .pb{animation:poseb 3.8s ease-in-out infinite}
+  @keyframes posea{0%,40%{opacity:1}52%,90%{opacity:0}100%{opacity:1}}
+  @keyframes poseb{0%,40%{opacity:0}52%,90%{opacity:1}100%{opacity:0}}
+  .sheetlayer.show .sheet{animation:sheetup .3s cubic-bezier(.2,.8,.25,1)}
+  @keyframes sheetup{from{transform:translateY(48px);opacity:.6}to{transform:translateY(0);opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){ .pa{opacity:0} }
+.sh-h{font-family:var(--disp);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+.sh-steps{margin:0 0 16px;padding:0;list-style:none;counter-reset:st}
+.sh-steps li{position:relative;padding:0 0 11px 34px;color:var(--muted);font-size:14.5px;line-height:1.5;counter-increment:st}
+.sh-steps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:2.5px;font-family:var(--mono);
+  font-size:11px;color:var(--m-tint)}
+.sh-focus{border:1px solid rgba(233,165,94,.35);background:rgba(233,165,94,.06);border-radius:14px;padding:12px 14px;
+  color:var(--muted);font-size:13.5px;line-height:1.5}
+.sh-focus b{color:var(--m-tint);font-weight:600;font-family:var(--disp);font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:4px}
 
 footer{margin-top:44px;color:var(--faint);font-size:12.5px;line-height:1.6;text-align:center}
 @media (max-width:420px){ .rows{grid-template-columns:1fr} }
@@ -285,6 +334,22 @@ footer{margin-top:44px;color:var(--faint);font-size:12.5px;line-height:1.6;text-
   </footer>
 </div>
 
+<div class="sheetlayer" id="sheetlayer">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="uitleg oefening">
+    <div class="sh-grip"></div>
+    <div class="sh-top">
+      <span class="sh-title" id="sh-title"></span>
+      <span class="sh-sub" id="sh-sub"></span>
+      <button class="sh-close" id="sh-close" aria-label="sluiten">&#10005;</button>
+    </div>
+    <div class="sh-muscles" id="sh-muscles"></div>
+    <div class="sh-anim" id="sh-anim"></div>
+    <p class="sh-h">Uitvoering</p>
+    <ol class="sh-steps" id="sh-steps"></ol>
+    <div class="sh-focus" id="sh-focus"></div>
+  </div>
+</div>
+
 <div class="pinlayer" id="pinlayer">
   <div class="pincard">
     <h3>Bewerkcode</h3>
@@ -352,6 +417,142 @@ function nextFor(ex){
   return fmt(progUp(ex,ex.w.m))+" / "+fmt(progUp(ex,ex.w.k));
 }
 
+/* ---------- uitleg per oefening ---------- */
+var HOW={
+rdl:{sp:["Hamstrings","Bilspieren","Onderrug"],st:["Stang op heuphoogte, voeten op heupbreedte, lichte knik in de knieën.","Duw je heupen naar achteren en laat de stang vlak langs je benen zakken.","Zak tot net onder de knie — rug lang, borst open.","Duw de heupen naar voren en kom gecontroleerd omhoog."],fo:"De beweging komt uit de heup, niet uit de onderrug. Overslaan na een rit van 60 km of meer."},
+chest:{sp:["Borst","Voorste schouder","Triceps"],st:["Stel de zitting af: handvatten op borsthoogte.","Schouderbladen laag en tegen de leuning.","Duw uit tot je armen bíjna gestrekt zijn.","Kom rustig terug tot je ellebogen net voorbij je romp zijn."],fo:"Sla de ellebogen niet op slot; de borst doet het werk. Loopt in stappen van 2,5."},
+pulldown:{sp:["Rug (lats)","Biceps"],st:["Pak de stang iets breder dan schouderbreedte.","Leun een fractie achterover en open je borst.","Trek de stang naar je bovenste borst, ellebogen richting je heupen.","Laat rustig en met controle terug omhoog."],fo:"Trek vanuit de ellebogen, niet vanuit de handen. Schouders laag houden."},
+row:{sp:["Middenrug","Biceps"],st:["Zit rechtop, knieën licht gebogen, borst open.","Trek het handvat onderlangs naar je navel.","Ellebogen langs het lichaam, knijp je schouderbladen samen.","Strek rustig terug en laat je schouders licht mee naar voren."],fo:"Romp blijft stil — niet meezwaaien met de beweging."},
+shoulder:{sp:["Schouders","Triceps"],st:["Zitting zo dat de handvatten op schouderhoogte starten.","Onderarmen verticaal, onderrug tegen de leuning.","Duw omhoog tot je armen bíjna gestrekt zijn.","Zak rustig terug tot oorhoogte."],fo:"Niet hol trekken met de onderrug; de beweging blijft strak verticaal."},
+raises:{sp:["Zijkant schouders"],st:["Dumbbells naast je lichaam, lichte knik in de ellebogen.","Hef zijwaarts tot schouderhoogte — niet hoger.","Polsen blijven onder de ellebogen.","Zak bewust in twee tellen terug."],fo:"Per hand, bewust licht. Geen zwaai; bovenaan een korte pauze."},
+face:{sp:["Achterste schouders","Bovenrug"],st:["Touw op ooghoogte, stap achteruit tot er spanning staat.","Trek het touw naar je gezicht én uit elkaar.","Duimen wijzen naar achteren, ellebogen hoog en wijd.","Houd bovenaan één tel vast en keer rustig terug."],fo:"Plafond op 41: daarboven wordt het zwaaien. Progressie loopt via de reps, naar 3 × 18."},
+triceps:{sp:["Triceps"],st:["Ellebogen tegen je zij, stang op borsthoogte.","Duw omlaag tot je armen volledig gestrekt zijn.","Alleen de onderarmen bewegen.","Laat rustig terugkomen tot de onderarm horizontaal is."],fo:"Ellebogen blijven stil op hun plek. Direct na de face pulls, zelfde machine."},
+biceps:{sp:["Biceps"],st:["Rug tegen de kolom, ellebogen tegen je zij.","Krul de stang rustig naar je borst.","Knijp bovenaan kort aan.","Zak tot je armen bíjna gestrekt zijn."],fo:"Ellebogen stil, polsen recht — niet hangen in de polsen."},
+knee:{sp:["Buik","Heupbuigers"],st:["Hang aan de stang met actieve, lage schouders.","Trek je knieën naar je borst.","Kantel je bekken aan het einde mee omhoog.","Zak rustig terug zonder te gaan zwaaien."],fo:"Overslaan bij stijve heupbuigers."},
+crunch:{sp:["Buik"],st:["Kniel met het touw naast je hoofd, heupen stil.","Krul je romp naar beneden, ellebogen richting knieën.","Beweeg vanuit de buik, niet vanuit de armen.","Kom rustig terug omhoog tot je romp lang is."],fo:"Vanuit de buik, niet vanuit de heup — de heuphoek verandert niet."},
+pallof:{sp:["Diepe buikspieren","Anti-rotatie"],st:["Sta zijwaarts van de kabel, handvat voor je borst.","Duw je armen recht vooruit.","Houd twee tellen — laat de kabel je niet laten draaien.","Kom rustig terug naar je borst."],fo:"Heupen en schouders blijven recht vooruit wijzen. Alternatief op dezelfde kabel: staande eenarmige kabelpress."},
+deadbug:{sp:["Diepe buikspieren","Core-stabiliteit"],st:["Lig op je rug: armen omhoog, knieën boven je heupen.","Strek langzaam één been en de tegenovergestelde arm.","Druk je onderrug de hele tijd in de grond.","Wissel rustig van kant."],fo:"Adem uit tijdens het strekken. Vaste vervanger van de plank."}
+};
+
+/* ---------- lijnfiguren (2 poses, crossfade) ---------- */
+function _pl(pts){return '<polyline points="'+pts.map(function(p){return p[0]+","+p[1]}).join(" ")+'"/>'}
+function _fig(f){
+  var sh=f.sh||f.neck,s='<g class="fg"><circle cx="'+f.head[0]+'" cy="'+f.head[1]+'" r="7"/>';
+  s+=_pl([f.neck,f.hip]);
+  (f.legs||[]).forEach(function(l){s+=_pl([f.hip].concat(l))});
+  (f.arms||[]).forEach(function(a){s+=_pl([sh].concat(a))});
+  return s+'</g>';
+}
+function _plate(x,y){return '<circle class="eq" cx="'+x+'" cy="'+y+'" r="10"/>'}
+function _db(x,y){return '<circle class="eqf" cx="'+x+'" cy="'+y+'" r="4.5"/>'}
+function _bar(x1,y1,x2,y2){return '<line class="eq" x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"/>'}
+function _cb(x1,y1,x2,y2){return '<line class="cb" x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"/>'}
+function _st(x1,y1,x2,y2){return '<line class="st" x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"/>'}
+var GND='<line class="gnd" x1="14" y1="126" x2="186" y2="126"/>';
+
+var FIGS={
+rdl:function(){
+  var A=_fig({head:[104,24],neck:[104,38],hip:[104,78],legs:[[[101,102],[100,126]],[[108,102],[107,126]]],arms:[[[98,56],[92,73]]]})+_plate(92,76);
+  var B=_fig({head:[62,58],neck:[70,64],hip:[106,84],sh:[72,66],legs:[[[103,104],[101,126]],[[110,104],[108,126]]],arms:[[[72,86],[74,106]]]})+_plate(74,108);
+  return GND+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+chest:function(){
+  var st=_st(124,52,124,110)+_st(104,110,138,110);
+  var A=_fig({head:[116,36],neck:[116,50],hip:[116,92],sh:[114,56],legs:[[[92,98],[88,124]]],arms:[[[100,66],[88,58]]]})+_bar(88,50,88,66);
+  var B=_fig({head:[116,36],neck:[116,50],hip:[116,92],sh:[114,56],legs:[[[92,98],[88,124]]],arms:[[[92,56],[68,56]]]})+_bar(68,48,68,64);
+  return GND+st+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+pulldown:function(){
+  var top=_st(88,8,112,8);
+  var A=_cb(100,8,100,22)+_bar(56,22,144,22)+_fig({head:[100,54],neck:[100,68],hip:[100,108],sh:[100,72],legs:[[[82,112],[82,126]],[[118,112],[118,126]]],arms:[[[80,46],[62,24]],[[120,46],[138,24]]]});
+  var B=_cb(100,8,100,72)+_bar(58,72,142,72)+_fig({head:[100,54],neck:[100,68],hip:[100,108],sh:[100,72],legs:[[[82,112],[82,126]],[[118,112],[118,126]]],arms:[[[74,88],[64,74]],[[126,88],[136,74]]]});
+  return GND+top+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+row:function(){
+  var pulley=_st(16,96,16,112);
+  var A=_cb(18,102,58,80)+_fig({head:[92,42],neck:[96,56],hip:[112,96],sh:[95,60],legs:[[[86,102],[74,118]]],arms:[[[76,70],[58,80]]]})+_bar(56,74,60,86);
+  var B=_cb(18,102,90,82)+_fig({head:[106,38],neck:[106,52],hip:[112,96],sh:[105,58],legs:[[[86,102],[74,118]]],arms:[[[114,76],[90,82]]]})+_bar(88,76,92,88);
+  return GND+pulley+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+shoulder:function(){
+  var st=_st(118,50,118,108)+_st(100,108,134,108);
+  var A=_fig({head:[106,34],neck:[106,48],hip:[106,90],sh:[106,52],legs:[[[86,96],[84,122]]],arms:[[[90,64],[90,46]]]})+_bar(84,46,96,46);
+  var B=_fig({head:[106,34],neck:[106,48],hip:[106,90],sh:[106,52],legs:[[[86,96],[84,122]]],arms:[[[90,36],[89,20]]]})+_bar(83,20,95,20);
+  return GND+st+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+raises:function(){
+  var A=_fig({head:[100,28],neck:[100,42],hip:[100,90],sh:[100,50],legs:[[[94,108],[92,126]],[[106,108],[108,126]]],arms:[[[88,70],[84,86]],[[112,70],[116,86]]]})+_db(84,90)+_db(116,90);
+  var B=_fig({head:[100,28],neck:[100,42],hip:[100,90],sh:[100,50],legs:[[[94,108],[92,126]],[[106,108],[108,126]]],arms:[[[76,54],[56,52]],[[124,54],[144,52]]]})+_db(52,52)+_db(148,52);
+  return GND+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+face:function(){
+  var anchor=_st(184,34,184,54);
+  var A=_cb(182,44,124,46)+_fig({head:[82,36],neck:[84,50],hip:[84,92],sh:[86,54],legs:[[[78,108],[74,126]],[[92,108],[96,126]]],arms:[[[104,50],[124,46]]]});
+  var B=_cb(182,44,100,42)+_fig({head:[82,36],neck:[84,50],hip:[84,92],sh:[86,54],legs:[[[78,108],[74,126]],[[92,108],[96,126]]],arms:[[[118,56],[100,42]]]});
+  return GND+anchor+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+triceps:function(){
+  var anchor=_st(140,8,156,8);
+  var A=_cb(148,8,106,46)+_fig({head:[84,30],neck:[84,44],hip:[84,90],sh:[86,50],legs:[[[80,108],[78,126]],[[90,108],[92,126]]],arms:[[[98,64],[106,46]]]})+_bar(98,46,114,46);
+  var B=_cb(148,8,110,84)+_fig({head:[84,30],neck:[84,44],hip:[84,90],sh:[86,50],legs:[[[80,108],[78,126]],[[90,108],[92,126]]],arms:[[[98,64],[110,84]]]})+_bar(102,84,118,84);
+  return GND+anchor+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+biceps:function(){
+  var col=_st(98,30,98,124);
+  var A=_cb(24,124,74,86)+_fig({head:[84,30],neck:[84,44],hip:[86,90],sh:[84,50],legs:[[[82,108],[80,126]],[[92,108],[94,126]]],arms:[[[80,66],[74,86]]]})+_bar(68,84,80,88);
+  var B=_cb(24,124,64,52)+_fig({head:[84,30],neck:[84,44],hip:[86,90],sh:[84,50],legs:[[[82,108],[80,126]],[[92,108],[94,126]]],arms:[[[80,66],[64,52]]]})+_bar(58,50,70,54);
+  return GND+col+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+knee:function(){
+  var bar=_bar(64,14,136,14);
+  var A=_fig({head:[100,34],neck:[100,48],hip:[100,84],sh:[100,48],arms:[[[78,16]],[[122,16]]],legs:[[[98,106],[98,124]],[[104,106],[104,124]]]});
+  var B=_fig({head:[100,34],neck:[100,48],hip:[98,82],sh:[100,48],arms:[[[78,16]],[[122,16]]],legs:[[[80,70],[82,88]],[[86,74],[88,92]]]});
+  return bar+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+crunch:function(){
+  var anchor=_st(24,8,40,8);
+  var A=_cb(32,8,86,46)+_fig({head:[96,42],neck:[100,56],hip:[118,98],sh:[99,60],legs:[[[118,120],[140,122]]],arms:[[[88,58],[86,46]]]});
+  var B=_cb(32,8,78,80)+_fig({head:[88,88],neck:[94,74],hip:[118,98],sh:[95,75],legs:[[[118,120],[140,122]]],arms:[[[86,78],[78,80]]]});
+  return GND+anchor+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+pallof:function(){
+  var anchor=_st(184,48,184,68);
+  var A=_cb(182,58,76,56)+_fig({head:[90,30],neck:[90,44],hip:[90,92],sh:[90,52],legs:[[[84,108],[80,126]],[[98,108],[102,126]]],arms:[[[76,66],[82,54]]]});
+  var B=_cb(182,58,56,56)+_fig({head:[90,30],neck:[90,44],hip:[90,92],sh:[90,52],legs:[[[84,108],[80,126]],[[98,108],[102,126]]],arms:[[[72,56],[56,56]]]});
+  return GND+anchor+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+},
+deadbug:function(){
+  var A=_fig({head:[131,111],neck:[118,112],hip:[78,112],sh:[114,111],legs:[[[78,92],[92,90]]],arms:[[[112,94],[112,76]]]});
+  var B=_fig({head:[131,111],neck:[118,112],hip:[78,112],sh:[114,111],legs:[[[54,106],[36,108]],[[78,92],[92,90]]],arms:[[[128,90],[142,78]],[[112,94],[112,76]]]});
+  return GND+'<g class="pa">'+A+'</g><g class="pb">'+B+'</g>';
+}
+};
+
+window.__figsvg=function(id){return FIGS[id]?FIGS[id]():""};
+
+/* ---------- sheet ---------- */
+function openSheet(ex){
+  var how=HOW[ex.id];if(!how)return;
+  byId("sh-title").textContent=ex.name;
+  byId("sh-sub").textContent=ex.sub||"";
+  byId("sh-muscles").innerHTML=how.sp.map(function(s){return "<span>"+esc(s)+"</span>"}).join("");
+  byId("sh-anim").innerHTML=FIGS[ex.id]?'<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet">'+FIGS[ex.id]()+'</svg>':"";
+  byId("sh-steps").innerHTML=how.st.map(function(s){return "<li>"+esc(s)+"</li>"}).join("");
+  byId("sh-focus").innerHTML="<b>Let op</b>"+esc(how.fo);
+  byId("sheetlayer").classList.add("show");
+}
+function closeSheet(){byId("sheetlayer").classList.remove("show")}
+byId("sh-close").addEventListener("click",closeSheet);
+byId("sheetlayer").addEventListener("click",function(e){if(e.target===byId("sheetlayer"))closeSheet()});
+document.addEventListener("click",function(e){
+  var top=e.target.closest(".card-top");
+  if(top&&!e.target.closest("button,input")){
+    var card=top.closest(".card");if(!card)return;
+    var ex=exById(card.getAttribute("data-ex"));
+    if(ex&&HOW[ex.id])openSheet(ex);
+  }
+});
+
 /* ---------- sparkline ---------- */
 function spark(ex){
   if(S.logCols.indexOf(ex.id)<0)return "";
@@ -393,7 +594,7 @@ function spark(ex){
     var last=seg[seg.length-1];
     if(!last.length)return "";
     var p=last[last.length-1];
-    return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="2.7" fill="'+col+'" stroke="#151A20" stroke-width="1.4"/>';
+    return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="2.7" fill="'+col+'" stroke="#101A2C" stroke-width="1.4"/>';
   }
   var sm=segs(pts.m),sk=segs(pts.k),uid=ex.id;
   return '<div class="spark" aria-hidden="true"><svg viewBox="0 0 340 44" preserveAspectRatio="none">'
@@ -421,6 +622,7 @@ function cardHtml(ex){
   h+='<div class="card-top">';
   if(ex.nr)h+='<span class="nr">'+(ex.nr<10?"0":"")+ex.nr+'</span>';
   h+='<span class="exname">'+esc(ex.name)+(ex.sub?'<span class="exsub">'+esc(ex.sub)+'</span>':"")+'</span>';
+  if(HOW[ex.id])h+='<span class="info" aria-hidden="true">i</span>';
   h+='<span class="reps">'+esc(ex.reps)+'</span></div>';
 
   if(ex.w){
